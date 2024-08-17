@@ -8,7 +8,7 @@ export const Calculator = () => {
     const [mode, setMode] = useState(false)
     const [history, setHistory] = useState([]);
 
-    const serverUrl = import.meta.env.VITE_API_URL;
+    const serverUrl = 'https://calculator-sooty-iota.vercel.app/api';
 
 
     useEffect(() => {

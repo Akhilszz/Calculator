@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 
 const corsOptions = {
 
-    origin: 'https://calculator-54c7.vercel.app',
+    origin: 'https://calculator-frontend-pi.vercel.app/',
 };
 
 app.use(cors(corsOptions));
