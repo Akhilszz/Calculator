@@ -8,7 +8,7 @@ export const Calculator = () => {
     const [mode, setMode] = useState(false)
     const [history, setHistory] = useState([]);
 
-    const serverUrl = 'https://calculator-sooty-iota.vercel.app/api';
+    const serverUrl = 'https://calculator-sooty-iota.vercel.app';
 
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export const Calculator = () => {
 
     async function AddCalculations() {
         try {
-            const response = await axios.post(`${serverUrl}/addCalc`, {
+            const response = await axios.post(`${serverUrl}/api/addCalc`, {
                 Data: num,
                 Result: res,
             });
@@ -40,7 +40,7 @@ export const Calculator = () => {
 
     async function FetchHistory() {
         try {
-            const response = await axios.get(`${serverUrl}/fetchCalc`);
+            const response = await axios.get(`${serverUrl}/api/fetchCalc`);
 
             if (response.data.success) {
                 setHistory(response.data.Tasks);
@@ -88,7 +88,7 @@ export const Calculator = () => {
 
         if (mode === true) {
             try {
-                const response = await axios.delete(`${serverUrl}/delete`)
+                const response = await axios.delete(`${serverUrl}/api/delete`)
 
                 if (response.data.success) {
                     console.log(response.data.msg)

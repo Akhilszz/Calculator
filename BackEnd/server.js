@@ -7,12 +7,7 @@ const Database = require('./database/database')
 const app = express()
 const port = process.env.PORT || 5000;
 
-const corsOptions = {
-
-    origin: 'https://calculator-frontend-pi.vercel.app',
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json())
 app.use('/api', route)
