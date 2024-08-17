@@ -16,10 +16,10 @@ export const Calculator = () => {
     }, []);
 
     useEffect(() => {
-        if (res && num !== '') {
+        if (res !== '') {
             AddCalculations();
         }
-    }, [res, num]);
+    }, [res]);
 
     async function AddCalculations() {
         try {
